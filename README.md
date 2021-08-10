@@ -22,6 +22,7 @@ npm i
     "webhookURL" : "<Slack Incomming Webhook URL>"
 }
 ```
+
 1. Test notification with your login.
 
 ```
@@ -31,5 +32,5 @@ npm start
 1. setting crontab -e
 
 ```
-* * * * *  /home/username/workspace/slack-notice-township/node_modules/.bin/ts-node /home/username/workspace/slack-notice-township/index.ts
+* * * * *  cd /home/username/workspace/slack-notice-township/ && /home/username/workspace/slack-notice-township/node_modules/.bin/ts-node /home/username/workspace/slack-notice-township/index.ts
 ```
