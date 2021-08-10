@@ -22,6 +22,11 @@ npm i
     "webhookURL" : "<Slack Incomming Webhook URL>"
 }
 ```
+1. Test notification with your login.
+
+```
+npm start
+```
 
 1. setting crontab -e
 
