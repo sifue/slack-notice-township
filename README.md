@@ -5,7 +5,7 @@ This script adds people who have joined or left A Township Tale's server to the 
 # Usage
 
 1. install node.js
-1. install puppettier
+1. install puppettier (If you use linux server, please see if ubuntu [https://dev.to/chis0m/installing-puppeteer-on-an-ubuntu-aws-ec2-instance-5o7](https://dev.to/chis0m/installing-puppeteer-on-an-ubuntu-aws-ec2-instance-5o7), if centos [https://frugalisminds.com/how-to-setup-puppeteer-in-centos-7/](https://frugalisminds.com/how-to-setup-puppeteer-in-centos-7/))
 1. install this scripts
 
 ```
