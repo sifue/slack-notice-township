@@ -1,4 +1,6 @@
 {
     "username" : "<your ATT username>",
-    "password" : "<your ATT password>"
+    "password" : "<your ATT password>",
+    "serverID" : "<your ATT server id>",
+    "webhookURL" : "<Slack Incomming Webhook URL>"
 }

@@ -11,6 +11,7 @@
   "author": "sifue",
   "license": "MIT",
   "dependencies": {
+    "@slack/webhook": "^6.0.0",
     "puppeteer": "^10.2.0"
   },
   "devDependencies": {
