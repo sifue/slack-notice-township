@@ -35,45 +35,44 @@ const fs = require('fs').promises;
   });
   await fs.writeFile('usernames.json', JSON.stringify(usernames));
 
-  if (usernames.length != lastUsernams.length) {
-    let join: string[] = [];
-    let left: string[] = [];
+  let join: string[] = [];
+  let left: string[] = [];
 
-    usernames.forEach((u) => {
-      if (!lastUsernams.includes(u)) {
-        join.push(u);
-      }
-    });
-
-    lastUsernams.forEach((u) => {
-      if (!usernames.includes(u)) {
-        left.push(u);
-      }
-    });
-
-    let message = '';
-    if (join.length > 0) {
-      message += 'Join to server: ' + join.join(', ') + '\n';
+  usernames.forEach((u) => {
+    if (!lastUsernams.includes(u)) {
+      join.push(u);
     }
+  });
 
-    if (left.length > 0) {
-      message += 'Left from server: ' + left.join(', ') + '\n';
+  lastUsernams.forEach((u) => {
+    if (!usernames.includes(u)) {
+      left.push(u);
     }
+  });
 
-    if (join.length + left.length > 0) {
-      message +=
-        `Current members(${usernames.length}): ` + usernames.join(', ');
-      console.log('[INFO] === POST MESSAGE START ===');
-      console.log(message);
-      console.log('[INFO] === POST MESSAGE END ===');
-      const webhook = new IncomingWebhook(config.webhookURL);
-      await webhook.send({
-        text: message,
-      });
-    } else {
-      console.log("[INFO] The members didn't change.");
-    }
+  let message = '';
+  if (join.length > 0) {
+    message += '*Join to server* : ' + join.join(', ') + '\n';
   }
+
+  if (left.length > 0) {
+    message += '*Left from server* : ' + left.join(', ') + '\n';
+  }
+
+  if (join.length + left.length > 0) {
+    message +=
+      `*Current members(${usernames.length})* : ` + usernames.join(', ');
+    console.log('[INFO] === POST MESSAGE START ===');
+    console.log(message);
+    console.log('[INFO] === POST MESSAGE END ===');
+    const webhook = new IncomingWebhook(config.webhookURL);
+    await webhook.send({
+      text: message,
+    });
+  } else {
+    console.log("[INFO] The members didn't change.");
+  }
+
   // await page.screenshot({ path: 'debug.png' }); // for debug
   await browser.close();
   console.log('[INFO] Finished.');
