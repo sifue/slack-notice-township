@@ -19,6 +19,7 @@ const fs = require('fs').promises;
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page: Page = await browser.newPage();
+  await page.setDefaultNavigationTimeout(30000);
   await page.goto(
     `https://dash.townshiptale.com/auth/login-page?redirect=/servers/${config.serverID}`
   );
